@@ -110,17 +110,6 @@ bbmp-launcher/
 └─ nuxt.config.ts
 ```
 
----
-
-## 🔧 Troubleshooting
-
-- **Git push rejected (file >100MB):** You accidentally committed build artifacts or `node_modules`. Add a `.gitignore`, then **rewrite history** with `git filter-repo` (or BFG) and force‑push.
-- **`window.bbmp` undefined:** You’re viewing the Nuxt dev server in a browser tab. Use the Electron window to access native features (downloads, Java checks).
-- **Java not found:** Click **Install Java 17** to auto-install Temurin in app data, or pick your system Java binary.
-- **“No jar asset found”:** Use the **Custom JAR URL** field and paste the direct link to your jar (e.g., the `v0.1` release asset URL).
-
----
-
 ## 🧾 License
 
 Copyright (c) 2025 **BlueBerryCodingGroup**  
