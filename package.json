@@ -1,0 +1,23 @@
+{
+  "name": "bbmp-launcher",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Nuxt + Electron launcher for BlueBerry Minecraft Proxy (BBMP)",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "cross-env NUXT_DEV=1 concurrently -k -n NUXT,ELECTRON -c \"bgBlue.bold,bgMagenta.bold\" \"nuxt dev\" \"wait-on tcp:3000 && electron .\"",
+    "build": "nuxt build && node scripts/postbuild.mjs && electron-builder -c electron-builder.yml",
+    "start": "electron ."
+  },
+  "dependencies": {
+    "nuxt": "3.12.4"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1",
+    "cross-env": "^7.0.3",
+    "electron": "^30.0.8",
+    "electron-builder": "^24.13.3",
+    "wait-on": "^7.2.0"
+  }
+}

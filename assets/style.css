@@ -1,0 +1,91 @@
+/* Hide scrollbars everywhere but keep scrolling */
+* { scrollbar-width: none; -ms-overflow-style: none; }
+*::-webkit-scrollbar { width: 0; height: 0; }
+
+/* Base variables (default = Purple) */
+:root{
+    --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+
+    --bg:#0b0a0f;          /* page gradient start */
+    --bg2:#0d0b10;         /* page gradient end */
+    --panel:#14121b;       /* card */
+    --text:#e6e6f0;
+    --muted:#b8b8c6;
+    --accent:#6d28d9;      /* purple */
+    --accent2:#a78bfa;
+    --danger:#ef4444;
+    --border:#201a2e;
+    --chip:#221a33;
+    --chip-border:#3a2a57;
+    --chip-text:#c9bbff;
+}
+
+/* THEME: Blue */
+:root[data-theme="blue"]{
+    --accent:#2563eb;
+    --accent2:#60a5fa;
+    --panel:#0f1420;
+    --chip:#15223a;
+    --chip-border:#244a8a;
+    --chip-text:#b9d4ff;
+}
+
+/* THEME: Neon */
+:root[data-theme="neon"]{
+    --accent:#22d3ee;
+    --accent2:#a7f3d0;
+    --panel:#0c1115;
+    --chip:#0f1720;
+    --chip-border:#1f3a46;
+    --chip-text:#b8fff3;
+}
+
+/* THEME: High Contrast */
+:root[data-theme="contrast"]{
+    --accent:#f97316;
+    --accent2:#fde047;
+    --panel:#0a0a0a;
+    --text:#ffffff;
+    --muted:#cfcfcf;
+    --chip:#111111;
+    --chip-border:#333333;
+    --chip-text:#ffe6bf;
+}
+
+html,body,#__nuxt{ height:100%}
+body{
+    background:linear-gradient(180deg,var(--bg),var(--bg2));
+    color:var(--text);
+    font-family: var(--font-sans);
+}
+.container{ max-width:980px; margin:0 auto; padding:24px}
+.card{
+    background:var(--panel);
+    border-radius:16px; padding:20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.03)
+}
+h1{ font-size:28px; margin: 0 0 16px; letter-spacing:.5px}
+.grid{ display:grid; grid-template-columns: 1fr 1fr; gap:16px}
+.input, select{
+    background:#0f0d15; border:1px solid var(--border);
+    color:var(--text); padding:10px 12px; border-radius:12px; outline:none
+}
+.input::placeholder{ color:#7b7392}
+.label{ font-size:12px; color:var(--muted); margin-bottom:6px}
+.row{ display:flex; gap:12px; align-items:center; flex-wrap:wrap }
+.btn{
+    background:var(--accent); color:white; border:none; padding:10px 14px;
+    border-radius:12px; cursor:pointer; font-weight:600; transition:filter .15s
+}
+.btn:hover{ filter:brightness(1.05) }
+.btn.secondary{ background:#1f1b2a }
+.btn.danger{ background: var(--danger) }
+.kbd{ background:var(--chip); color:var(--chip-text); padding:2px 7px; border-radius:6px; font-size:12px; border:1px solid var(--chip-border)}
+.mono{ font-family: var(--font-mono); font-size:12px}
+.progress{ height:8px; background:#221d31; border-radius:999px; overflow:hidden}
+.progress > i{ display:block; height:100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); width:0%}
+/* Logs inherit scrollbar hiding from global rules */
+.log{ background:#0e0c13; border:1px solid var(--chip-border); border-radius:12px; padding:12px; height:220px; overflow:auto; white-space:pre-wrap}
+.footer{ color:#9da0b3; font-size:12px; margin-top:16px}
+.badge{ background:var(--chip); padding:4px 8px; border-radius:999px; font-size:12px; color:var(--chip-text); border:1px solid var(--chip-border)}

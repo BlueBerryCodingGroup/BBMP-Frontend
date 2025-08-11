@@ -1,0 +1,23 @@
+appId: com.blueberrycodinggroup.bbmplauncher
+productName: BBMP Launcher
+files:
+  - "!node_modules/.cache/**"
+  - "!scripts/**"
+  - dist/**/*
+  - electron/**/*
+  - package.json
+extraResources:
+  - from: resources
+    to: resources
+mac:
+  category: public.app-category.utilities
+  icon: resources/icons/icon.png
+linux:
+  target:
+    - AppImage
+    - deb
+  icon: resources/icons
+win:
+  target:
+    - nsis
+  icon: resources/icons/icon.png
